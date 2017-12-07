@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Success!!!!!!!!!!</title>
+</head>
+<body>
+	<table>
+		{% for email in all_email: %}
+		<tr>
+			<td>E-mail: {{ email['email'] }}</td>
+			<td>Entered at: {{ email['created_at'] }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>
