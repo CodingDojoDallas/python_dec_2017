@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Friends</title>
+</head>
+	<body>
+		<h1>These are all my friends!</h1>
+		<table style = "width: 80%">
+			<tr>
+				<th>ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Occupation</th>
+			</tr>
+			{% for x in all_friends: %}
+			<tr>
+			   <td> {{ x['id'] }}</td> <!-- x variable has no meaning but should match any links that refer to the dictionary. -->
+			   <td>{{ x['first_name'] }}</td>
+			   <td>{{ x['last_name'] }}</td>
+			   <td>{{ x['occupation'] }}</td>
+			   <td><a href="/show/{{ x['id']}}">EDIT</a></td>
+			   <form action='/remove_friend/{{ x['id'] }}' method='POST'>
+			   <td><input type = "submit" value = "Delete"></td>
+			</form>
+			</tr>
+		{% endfor %}
+	</table>
+		<h2>Add a friend</h2>
+		  <form action='/friends' method='POST'>
+	    <label for="first_name">First Name:<input type="text" name="first_name" id="first_name" }}></label>
+	    <label for="last_name">Last Name:<input type="text" name="last_name" id="last_name" }}></label>
+	    <label for="occupation">Occupation:<input type="text" name="occupation" id="occupation" }}></label>
+	    <input type="submit" value="Add">
+	  </form>
+	</body>
+</html>

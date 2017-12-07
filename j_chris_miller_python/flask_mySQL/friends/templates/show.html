@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	  <form action='/update_friend/{{ friend['id'] }}' method='POST'>
+	    <label for="first_name">First Name:<input type="text" name="first_name" id="first_name" value = "{{ friend['first_name'] }}"></label> <!-- friend refers to variable passed in through route return -->
+	    <label for="last_name">Last Name:<input type="text" name="last_name" id="last_name" value = "{{ friend['last_name'] }}"></label>
+	    <label for="occupation">Occupation:<input type="text" name="occupation" id="occupation" value = "{{ friend['occupation'] }}"></label>	    
+	    <input type = "submit" value = "Update"></p>
+		   <hr>
+	  </form>
+
+</body>
+</html>

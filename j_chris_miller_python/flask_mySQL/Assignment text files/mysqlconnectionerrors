@@ -1,0 +1,15 @@
+    'user':gkjhgh 'root',
+                       ^
+SyntaxError: invalid syntax
+
+ File "C:\Users\Chris Miller\Dropbox\CodingDojo\Python\flask_mysql\friends\mysqlconnection.py", line 15, in __init__
+    DATABASE_URI = "mysql://{}:{}@127.0.0.1:{}/{}".format(config['user'], config['pgassword'], config['port'], config['database'])
+KeyError: 'pgassword' <----- typo
+
+    return MySQLConnection(app, db)
+  File "C:\Users\Chris Miller\Dropbox\CodingDojo\Python\flask_mysql\friends\mysqlconnection.py", line 16, in __init__
+    app.config['SQLALCHEMY_DATABASE_URI'] = DATAASE_URI <---- typo
+NameError: global name 'DATAASE_URI' is not defined
+(flaskEnv)
+
+
