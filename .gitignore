@@ -1,0 +1,14 @@
+### Python Files ###
+*.pyc
+
+### Workspace Files ###
+*.idea
+*.vscode
+
+### System Files ###
+.DS_Store
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
