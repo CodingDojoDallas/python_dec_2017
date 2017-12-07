@@ -1,0 +1,9 @@
+SELECT
+	`f1`.`first_name`, `f1`.`last_name`,
+    `f2`.`first_name` AS `friend_first_name`,
+    `f2`.`last_name` AS `friend_last_name`
+FROM `friendship` AS `f`
+JOIN `user` AS `f1`
+	ON `f`.`friend_id` = `f1`.`id`
+JOIN `user` AS `f2` ON `f`.`user_id` = `f2`.`id`
+ORDER BY `f1`.`first_name` ASC;

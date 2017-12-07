@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counter</title>
+</head>
+<body>
+	<h1>Counter</h1>
+	<p>{{session['hit']}}</p>
+	<form action='/process/increment' method='post'>
+		<input type='hidden' name='action' value='increment'>
+		<button type='submit' name='submit' value='increment'>Click Me for +2</button>
+	</form>
+	<form action='/process/reset' method='post'>
+		<input type='hidden' name='action' value='reset'>
+		<button type='submit' name='reset' value='reset'>Reset</button>	
+	</form>
+</body>
+</html>
