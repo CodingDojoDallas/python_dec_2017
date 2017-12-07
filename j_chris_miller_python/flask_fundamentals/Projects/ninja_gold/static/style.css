@@ -1,0 +1,30 @@
+#wrapper{
+	font-family: "Arial"
+}
+
+.box{
+	display: inline-block;
+	border: 1px solid black;
+	padding: 0px 5px;
+	margin: 2px;
+}
+
+.box p{
+	text-align: center;
+}
+.bottom p{
+	margin-top: 10px;
+}
+.box{
+	border: 1px solid black;
+	padding: 0px 5px;
+	margin: 2px;
+}
+#lost{
+	color: red;
+	text-align: left;
+}
+#win{
+	color: green;
+	text-align: left;
+}

@@ -1,0 +1,75 @@
+-- pip is a package manager used to manage and install modules
+-- python is the interpreter for the language
+
+-- things with colons: Class, method, conditional, loop
+-- print "lorum ipsum"{}{}.format(first_name, last_name)
+
+	string.count(substring): returns number of occurrences of substring in string.
+	string.endswith(substring): returns a boolean based upon whether the last characters of string match substring.
+	string.find(substring): returns the index of the start of the first occurrence of substring within string.
+	string.isalnum(): returns boolean depending on whether the string's length is > 0 and all characters are alphanumeric (letters and numbers only). Strings that include spaces and punctuation will return False for this method. Similar methods include .isalpha(), .isdigit(), .islower(), .isupper(), and so on. All return booleans.
+	string.join(list): returns a string that is all strings within our set (in this case a list) concatenated.
+	string.split(): returns a list of values where string is split at the given character. Without a parameter the default split is at every space.
+
+https://docs.python.org/2.6/library/string.html
+
+-- ranges
+--- x[:]
+	x[2:4] - creates new slice starts at 2 and ends at 3
+	x[2:]
+
+-- No triple == in python
+-- and, or instead of && ||
+
+-- for count in range(0, 5) = for count in range(5)
+-- use a third parameter if you want to change i++
+
+-- for element in my list (for lists) gets all elements
+
+**arguments are passed into parameters**
+
+DICTIONARY
+
+-- weekend = {}
+
+-- cmp(dict1, dict2) - Compares two dictionaries. The comparison process starts with the length of each dictionary, followed by key names, followed by values. The function returns 0 if the two dicts are equal, -1 if dict1 > dict2, 1 if dict1 < dict2.
+-- len() - give the total length of the dictionary.
+-- str() - produces a string representation of a dictionary.
+-- type() - returns the type of the passed variable. If passed variable is a dictionary, it will then return a dictionary type.
+-- Python includes the following dictionary methods:
+(either dict.method(yourDictionary) or yourDictionary.method() will work)
+
+-- .clear() - removes all elements from the dictionary
+-- .copy() - returns a shallow copy dictionary
+-- .fromkeys(sequence, [value] ) - create a new dictionary with keys from sequence and values set to value.
+-- .get(key, default=None) - For key key, returns value or default if key is not in dictionary.
+-- .has_key(key) - returns true if a given key is available in the dictionary, otherwise it returns false.
+-- .items() - returns a list of dictionary's (key, value) tuple pairs.
+-- .keys() - return a list of dictionary keys.
+-- .setdefault(key, default=None) - similar to get(), but will set dict[key]=default if key is not already in dictionary.
+-- .update(dict2) = adds dictionary dict2's key-values pairs to an existing dictionary.
+-- .values() - returns list of dictionary values.
+
+OOP
+
+-- instance of Class
+
+-- self is the particular instance of the Class object
+-- a method is called on an instance of a class
+-- *args (*anyvar) lets you put in multiple arguments
+
+--class SubClass(Class):
+	def __init__(self, param2, param3)
+
+FLASK
+-- POST returns redirect
+-- GET renders template
+
+*******request.form is an immutable dictionary******
+
+-- {{}} = print
+-- {% %} = python in html
+
+SESSIONS
+-- on a per-user basis
+-- session is a mutable dictionary

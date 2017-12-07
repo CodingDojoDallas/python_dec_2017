@@ -1,0 +1,3 @@
+#GET, POSt, etc.
+form is a dictionary on class request
+HTTP is stateless
