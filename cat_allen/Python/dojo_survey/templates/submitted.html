@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Submitted Form</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div id="form">
+		<h1>Submitted Form</h1>
+		<p>Name: {{name}}</p>
+		<p>Dojo Location: {{location}}</p>
+		<p>Favorite Language: {{language}}</p>
+		<p>Comment: {{comment}}</p>
+		<a href='/'>Go Back</a>
+	</div>
+</body>
+</html>

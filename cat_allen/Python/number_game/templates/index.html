@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number Game</title>
+</head>
+<body>
+	<h1>Guess Any Number from 1 - 100</h1>
+	<form action='/guess' method='post'>
+
+		<input type='text' name='guess' placeholder='Place your Bets!'>
+
+		<button type='submit' value='guess'>Submit</button>
+
+	</form>
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+    {% for message in messages %}
+ 	{{message}}
+    {% endfor %}
+    {% endif %}
+  	{% endwith %}
+</body>
+</html>

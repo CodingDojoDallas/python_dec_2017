@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dojos</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<h1>Ninja Application</h1>
+	<form>
+		Name: <input type="text" name="name">
+		Age: <input type="text" name="age">
+		Ninja Status: 
+		<input type="radio" name="status" value="beginner">Beginner
+		<input type="radio" name="status" value="intermediate">Intermediate
+		<input type="radio" name="status" value="advanced">Advanced
+		<button>Submit</button>
+	</form>
+</body>
+</html>
