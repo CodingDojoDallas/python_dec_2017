@@ -1,9 +1,21 @@
 ### Python Files ###
 *.pyc
 
+### Environments ###
+djangoenv
+djangoEnv
+DjangoEnv
+flaskenv
+flaskEnv
+FlaskEnv
+venv
+denv
+env
+
 ### Workspace Files ###
 *.idea
 *.vscode
+*.sublime-workspace
 
 ### System Files ###
 .DS_Store
@@ -12,3 +24,10 @@ ehthumbs.db
 ehthumbs_vista.db
 Desktop.ini
 $RECYCLE.BIN/
+
+### Compressed Files ###
+*.zip
+*.7z
+*.rar
+*.gzip
+*.gz
