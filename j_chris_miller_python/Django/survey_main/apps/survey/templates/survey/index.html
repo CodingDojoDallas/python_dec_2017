@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div id = "wrapper">
-		<form action = 'survey/process' method = "POST">
+		<form action = '/process' method = "POST">
 		{% csrf_token %}
 			<p>
 				Your Name: <input type="text" name = "name">

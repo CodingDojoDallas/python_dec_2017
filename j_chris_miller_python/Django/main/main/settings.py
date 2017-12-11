@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.session_words',
     'apps.random_word',
     'apps.first_app',
     'apps.blogs',
