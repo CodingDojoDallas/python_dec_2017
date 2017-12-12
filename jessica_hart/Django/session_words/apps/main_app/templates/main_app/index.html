@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Session Words</title>
+    <!-- Required tag to load in static files -->
+    {% load static %}
+    <!-- Stylesheet required for applying classes, note the static path -->
+    <link rel="stylesheet" href="{% static 'main_app/style.css' %}">
+</head>
+<body>
+    <h1>Add a new word</h1>
+    <!-- Form must go to route with the method that adds words -->
+    <form action="/session_words/add_word" method="POST">
+        <!-- Token required for all Django forms -->
+        {% csrf_token %}
+        <input type="text" name="word">
+        <label>Choose color</label>
+        <!-- Note the name AND value on radio buttons -->
+        <input type="radio" name="color" value="red"> <label>Red</label>
+        <input type="radio" name="color" value="green"> <label>Green</label>
+        <input type="radio" name="color" value="blue"> <label>Blue</label>
+        <input type="checkbox" name="big_font"> show in BIG fonts!
+        <button type="submit">Add to Session</button>
+    </form>
+    <a href="/session_words/clear">Clear Session</a>
+    <ul>
+        <!-- Loop through words in request.session['words'] list -->
+        {% for word in request.session.words %}
+            <!-- Insert color and size values as classes and display the word  -->
+            <li>
+                <span class="{{ word.color }} {{ word.size }}">{{ word.word }}</span> - added on {{ word.created_at }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

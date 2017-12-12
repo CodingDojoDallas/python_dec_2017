@@ -1,0 +1,17 @@
+/* Class for big fonts */
+.big_font {
+    font-size: 25px;
+}
+
+/* Classes that match the color radio button values */
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.blue {
+    color: blue;
+}
