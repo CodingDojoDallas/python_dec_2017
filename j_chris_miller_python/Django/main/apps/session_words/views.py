@@ -1,32 +1,27 @@
 from django.shortcuts import render, HttpResponse, redirect
 from datetime import datetime
 
+
 def index(request):
+	if 'words' not in request.session:
+		request.session['words'] = []
 	return render(request, "session_words/index.html")
 
 def add_word(request):
-	new_word = {}
-	for key, value in request.POST.iteritems():
-		if key != "csrfmiddlewaretoken" and key != "show-big":
-			new_word[key] = value
-		if key == "size":
-			new_word['big'] = "big"
-		else:
-			new_word['big'] = ""
-	new_word['created_at'] = datetime.now().strftime("%H:%M %p, %B %d, %Y")
-	try:
-		request.session['words']
-	except KeyError:
-		request.session['words'] = []
+	big_font = ''
+	if 'big_font' in request.POST:
+		big_font = 'big_font'
+	word = {
+		'word': request.POST['word'],
+		'color': request.POST['color'],
+		'big_font': big_font,
+		'time': datetime.now().strftime("%H:%M %p, %B %d, %Y")
+	}
+	temp = request.session['words']
+	temp.append(word)
+	request.session['words'] = temp
+	return redirect(index)
 
-	temp_list = request.session['words']
-	temp_list.append(new_word)
-	request.session['words'] = temp_list
-	for key, val in request.session.__dict__.iteritems():
-		print key, val
-	print "past created at", new_word
-	return redirect('/')
-
-# def clear(request):
-# 	pass
-
+def clear(request):
+	del request.session['words']
+	return redirect(index)

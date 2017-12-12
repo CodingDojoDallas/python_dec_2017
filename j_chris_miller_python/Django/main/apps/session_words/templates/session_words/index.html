@@ -3,38 +3,39 @@
 	<head>
 		<title>Session Words</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="../../static/session_words/style.css">
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'session_words/style.css' %}">
 	</head>
 	<body>
 		<div id = "wrapper">
 			<div class = "box">
 
-				<form action = /add_word method = "POST">
+				<form action='/add_word' method="POST">
 					{% csrf_token %}
 				<h1>Add a new word</h1>
-				<input type="text" name = "input">
+				<input type="text" name = "word">
 				<p>
 					Choose a color
 				</p>
 				<p>
-					<input type = "radio" name = "color" value = "green"> Green
-					<input type="radio" name="color" value = "blue"> Blue
-					<input type="radio" name = "color" value = "red"> Red
+					<input type="radio" name="color" value="green"> Green
+					<input type="radio" name="color" value="blue"> Blue
+					<input type="radio" name="color" value="red"> Red
 				</p>
 				<p>
-					<input type="checkbox" name = "size"> show in BIG fonts!
+					<input type="checkbox" name="big_font"> show in BIG fonts!
 				</p>
-				<input type="submit" name="Add to Session">
+				<button type="submit">Add to Selection</button>
+			</form>
+				{% csrf_token %}
 			</div><!-- end left -->
 			<div class = "box">
-				<a href = "clear"><button>Clear Session</button></a>
-				{% if request.session.words %}
-					{% for word in request.session.words %}
-					<p>
-						<span style = "color:{{word.color}}" class = "{{word.big}}">{{word.content}}</span> - added on {{ word.created_at}}
-					</p>
-					{% endfor %}
-					{% endif %}
+				<form action = '/clear'>
+					<input type="submit" name ="reset" value="Reset">
+				</form>
+				{% for word in request.session.words %}
+				<p><span class="{{ word.color }} {{ word.big_font }}">{{ word.word }}</span> {{ word.time }}</p>
+				{% endfor %}
 			</div><!-- end right -->
 		</div> <!-- end wrapper -->
 
