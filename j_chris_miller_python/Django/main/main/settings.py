@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'apps.dojo_ninjas',
     'apps.amadon',
     'apps.session_words',
     'apps.random_word',
