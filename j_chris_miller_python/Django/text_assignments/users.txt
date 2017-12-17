@@ -1,0 +1,13 @@
+>>> from apps.blogs.models import *
+>>>User.objects.all()
+>>>User.objects.last
+>>>User.objects.create(first_name="Chris", last_name="Miller", email_address="chris@test.com", age="42")
+>>>User.objects.first()
+>>>User.objects.all()order_by("last_name")
+>>>b = User.obejects.get(id = 3)
+>>>b.last_name = "Test"
+>>>b.save()
+>>>c = User.objects.get(id = 4)
+>>>c.delete()
+>>>c.save()
+
