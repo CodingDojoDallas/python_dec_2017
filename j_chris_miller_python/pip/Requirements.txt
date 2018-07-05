@@ -1,0 +1,10 @@
+pip install Django #installer installed pytz as well
+pip list #showed a list of programs that seem to be installed
+pip install Django #Requirement already satisfied; Django is installed
+pip freeze #outputs similar to list, with requirements format
+pip freeze > requirements.txt 
+ls #gave an invalid command
+#Navigated to gitbash and used ls command #gave list of hidden and visible files in Desktop
+pip uninstall Django #uninstalled successfully
+pip show Django #did not show anything
+pip search Flask #returns a Flask api

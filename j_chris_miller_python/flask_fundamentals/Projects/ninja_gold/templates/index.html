@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Gold</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'style.css')}}">
+</head>
+<body>
+	<div id = "wrapper">
+		
+		<p>Your Gold: {{session['gold']}}</p>
+		
+		<div class = "box">
+			<form action = '/process_money' method = "post">
+			
+			<p>Farm</p>
+			<p>(earns 10-20 golds)</p>
+			<p><button name = "building" value = "farm">Find Gold!</button></p>
+			</form>
+		</div>
+		
+		
+		<div class = "box">
+			<form action = '/process_money' method = "post">
+			<p>Cave</p>
+			<p>(earns 5-10 golds)</p>
+			<p><button name = "building" value = "cave">Find Gold!</button></p>
+			</form>
+		</div>
+		
+		
+		<div class = "box">
+			<form action = '/process_money' method = "post">
+			<p>House</p>
+			<p>(earns 2-5 golds)</p>
+			<p><button name = "building" value = "house">Find Gold!</button></p>
+			</form>
+		</div>
+		
+		
+		<div class = "box">
+			<form action = '/process_money' method = "post">
+			<p>Casino</p>
+			<p>(earns/loses 0-50 golds)</p>
+			<p><button name = "building" value = "casino">Find Gold!</button></p>
+			</form>
+		</div>
+
+		<div>
+			<p>Activity:</p>
+			<div class = 'box'>
+				<p id = "win">
+				{{session['payout_str']}}
+				</p>
+				<p id = "lost">
+				{{session['loss_str']}}
+				</p>
+			</div>
+		</div>
+		
+	</div>
+
+</body>
+</html>

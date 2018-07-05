@@ -1,0 +1,32 @@
+1.
+SELECT DATE_FORMAT(billing.charged_datetime, '%M') AS 'Month', SUM(amount) as 'Total Revenue'
+FROM billing
+WHERE MONTH(billing.charged_datetime) = 3
+AND YEAR(billing.charged_datetime) = 2012;
+2.
+SELECT SUM(billing.amount) as 'Total Revenue', clients.client_id
+FROM billing
+JOIN clients
+on clients.client_id = billing.client_id
+WHERE clients.client_id = 2
+3.
+SELECT sites.domain_name as 'sites', clients.first_name, clients.last_name
+FROM sites
+JOIN clients
+ON sites.client_id = clients.client_id
+WHERE clients.client_id = '10'
+4.
+SELECT COUNT(sites.site_id) as 'Number of Sites', DATE_FORMAT(sites.created_datetime, '%M') as 'Month', DATE_FORMAT(sites.created_datetime, '%Y') as 'Year', clients.first_name, clients.last_name
+FROM sites
+JOIN clients
+ON clients.client_id = sites.client_id
+WHERE clients.client_id = 1
+GROUP BY Month, Year;
+
+SELECT COUNT(sites.site_id) as 'Number of Sites', DATE_FORMAT(sites.created_datetime, '%M') as 'Month', DATE_FORMAT(sites.created_datetime, '%Y') as 'Year', clients.first_name, clients.last_name
+FROM sites
+JOIN clients
+ON clients.client_id = sites.client_id
+WHERE clients.client_id = 20
+GROUP BY Month, Year;
+5.

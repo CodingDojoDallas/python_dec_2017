@@ -1,0 +1,14 @@
+SELECT DISTINCT users.first_name, users.last_name
+FROM users
+JOIN follows
+ON follows.followed_id = users.id;
+
+SELECT users.first_name, users.last_name, tweets.tweet
+FROM tweets
+JOIN users
+ON tweets.user_id = users.id
+
+SELECT users.first_name, users.last_name, tweets.tweet
+FROM users
+JOIN tweets
+ON tweets.user_id = users.id

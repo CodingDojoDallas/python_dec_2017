@@ -1,0 +1,28 @@
+Create 5 books with the following names: C sharp, Java, Python, PHP, Ruby
+>>Book.objects.create(name = "C sharp") ..n times
+Create 5 different authors: Mike, Speros, John, Jadee, Jay
+>>Author.objects.create(first_name = "Mike") ..n times
+Add a new field in the authors table called 'notes'.  Make this a TextField.  Successfully create and run the migration files.
+notes = models.TextField(default = "") ..migrate
+Change the name of the 5th book to C#
+>>Book.objects.get(name = "C sharp").name = "C#"
+Change the first_name of the 5th author to Ketul
+>>Author.objects.get(id=5).first_name = "Ketul"
+Assign the first author to the first 2 books
+>>Author.objects.get(id=1).books.add(Book.objects.get(id=1)) ..n times
+Assign the second author to the first 3 books
+>>Repeat steps above
+Assign the third author to the first 4 books
+>>Repeat steps above
+Assign the fourth author to the first 5 books (or in other words, all the books)
+>>Repeat steps above
+For the 3rd book, retrieve all the authors
+>>Book.objects.get(id=3).authors.all()
+For the 3rd book, remove the first author
+>>Book.objects.get(id=3)authors.get(id=1).delete()
+For the 2nd book, add the 5th author as one of the authors
+>>Book.objects.get(id=2).authors.add(Author.objects.get(id=5))
+Find all the books that the 3rd author is part of
+>>Author.objects.get(id=3).books.all()
+Find all the books that the 2nd author is part of
+>>Author.objects.get(id=2).books.all()

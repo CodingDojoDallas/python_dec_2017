@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Word</title>
+</head>
+<body>
+	<div id = "wrapper">
+		
+		Random Word
+		<form action = "/generate" method ="post">	
+			{% csrf_token %}		
+			{{ request.session.tries }}
+			{{ request.session.random }}
+			<input type = "submit" value = "generate" name = generate>
+		</form>
+		<form action = '/reset' method = "post">
+			{% csrf_token %}
+			<input type = "submit" value = "reset" name = reset>
+		</form>
+	</div>
+	
+
+</body>
+</html>

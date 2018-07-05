@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Counter</title>
+	</head>
+	<body>
+		<h3>Counter</h3>
+			{{session['hit']}}
+		<form action = '/add_two' method = "post">
+			<button type = "submit">Increment by 2</button>
+			
+		</form>
+		<form action = '/reset' method = "post">
+			<button type = "submit">Reset</button>
+		</form>
+
+	</body>
+</html>

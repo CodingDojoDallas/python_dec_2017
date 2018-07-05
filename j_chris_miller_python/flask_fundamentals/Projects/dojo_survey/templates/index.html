@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>What's my Name?</title>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'style.css')}}">
+	</head>
+	<body>
+		<div>
+			<h3>Submitted Info</h3>
+			<form action = '/result' method ='post'>
+				Name: <input type = 'text' name = 'name'>
+				Email: <input type="text" name="email">
+				<p>Comment</p>
+				<input type = 'textarea' name = 'comment'>
+				<button input type="submit" name="process">Submit</button>
+
+			</form>
+		</div>
+		  {% with messages = get_flashed_messages(with categories = true) %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+	</body>
+</html>

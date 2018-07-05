@@ -1,0 +1,27 @@
+In [3]: Ninjas.objects.all()
+Out[3]: <QuerySet [<Ninja: Chris Miller>, <Ninja: Eric Sandridge>, <Ninja: Cat Allen>,
+ <Ninja: Anna Kneght>]>
+
+In [4]: Dojos.objects.all()
+Out[4]: <QuerySet [<Dojo: CodingDojo Silicon Valley | Mountain View | CA>, <Dojo: Codi
+ngDojo Seattle | Seattle | WA>, <Dojo: CodingDojo New York | New York | NY>]>
+
+In [5]: s = Dojos.objects.get(id=1)
+
+In [6]: s.name = "CodingDojo Dallas"
+
+In [7]: s.save()
+
+In [8]: Dojos.objects.all()
+Out[8]: <QuerySet [<Dojo: CodingDojo Dallas | Mountain View | CA>, <Dojo: CodingDojo S
+eattle | Seattle | WA>, <Dojo: CodingDojo New York | New York | NY>]>
+
+In [9]: s.city = "Dallas"
+
+In [10]: s.state = "TX"
+
+In [11]: s.save()
+
+In [12]: Dojos.objects.all()
+Out[12]: <QuerySet [<Dojo: CodingDojo Dallas | Dallas | TX>, <Dojo: CodingDojo Seattle
+ | Seattle | WA>, <Dojo: CodingDojo New York | New York | NY>]>
